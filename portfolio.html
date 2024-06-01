@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashutosh's Website - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2080128b64.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('images/sample4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="Name">Aashutosh Gupta</h1>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png" alt="Blood Bank App">
+                <div class="layer">
+                    <h3>Blood Bank App</h3>
+                    <p>This is a Blood Bank android application developed using java.In emergency situations, quick donor mobilization is crucial. To address these issues, we propose a Blood Banking App to connect donors and blood banks efficiently.
+                    </p>
+                    <a href="https://github.com/iamaashu55/Portfolio-Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" alt="Car Position Allocation">
+                <div class="layer">
+                    <h3>Car Position Allocation</h3>
+                    <p>Using linked list in C, this project gives easy way to handle parking system in multiple storey building. Exact details of all the vehicle can be monitored using this project.</p>
+                    <a href="https://github.com/iamaashu55/Car-Position-Allocation"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png" alt="Test Your Skilss">
+                <div class="layer">
+                    <h3>Test Your Skills</h3>
+                    <p>The goal of this project is to create an online platform where users can test their knowledge and skills in various subject areas.</p>
+                    <a href="https://github.com/iamaashu55/Test-Your-Skills"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/iamaashu55" class="btn">See more!</a>
+    </div>
+</div>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

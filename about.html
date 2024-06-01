@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashutosh's Website - About</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2080128b64.js" crossorigin="anonymous"></script>
+    <style>
+        /* Additional inline style to change background color */
+        #about {
+            background-image: url(images/sample2.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="Name">Aashutosh Gupta</h1>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p class="about">I am a computer science student at New Horizon College Of Engineering, specializing in front-end web development. I enjoy solving problems and building applications that can make a difference.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('education')">Education</p>
+                    <p class="tab-links" onclick="openTab('experience')">Achivements</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>JavaScript</span> - Advanced</li>
+                        <li><span>Python</span> - Intermediate</li>
+                        <li><span>React</span> - Intermediate</li>
+                        <li><span>Node.js</span> - Intermediate</li>
+                        <li><span>HTML/CSS</span> - Advanced</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>New Horizon College Of Engineering</span> - B.S. in Computer Science (2020 - 2024)</li>
+                        <li><span>High School</span> - Nobel Academy (2015 - 2017)</li>
+                        <li><span>10TH</span> - Mini Land English Secondary School</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Programming</span> - Runner up in TECHSIGHT a coding competition in the Computer Science Department of New Horizon College of Engineering (May 2023).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLniCZOZU0oSrcf11ox9-ZKvTl4JqjTSj5EoOXShiuLY9AtxptJ4jyls95a5LNWA1h/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {msg.innerHTML = "Message sent successfully!"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },3000)
+        form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+    function openTab(tabName){
+        var i, tabcontents, tablinks;
+        tabcontents = document.getElementsByClassName("tab-contents");
+        for(i = 0; i < tabcontents.length; i++){
+            tabcontents[i].classList.remove("active-tab");
+        }
+        tablinks = document.getElementsByClassName("tab-links");
+        for(i = 0; i < tablinks.length; i++){
+            tablinks[i].classList.remove("active-link");
+        }
+        document.getElementById(tabName).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+</script>
+</body>
+</html>
+
